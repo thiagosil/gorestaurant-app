@@ -62,7 +62,7 @@ const Dashboard: React.FC = () => {
     async function loadFoods(): Promise<void> {
       api
         .get<Food[]>('foods', {
-          params: { category: selectedCategory, name_like: searchValue },
+          params: { category_like: selectedCategory, name_like: searchValue },
         })
         .then(response => {
           const formattedFood = response.data.map(food => ({
